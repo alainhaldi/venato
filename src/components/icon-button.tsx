@@ -7,7 +7,7 @@ type IconButtonProps = {
 
 const IconButton = ({ icon, label }: IconButtonProps) => {
   return (
-    <Button>
+    <Button className="py-4 px-3">
       {icon}
       <p>{label}</p>
     </Button>
