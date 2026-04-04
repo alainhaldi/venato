@@ -1,6 +1,7 @@
-import { LucideFolderClosed } from "lucide-react";
+import { LucideHouse } from "lucide-react";
 import AppHeader from "@/components/header";
 import MainBody from "@/components/main-body";
+import { homePath } from "@/paths";
 
 export default function RootLayout({
   children,
@@ -11,9 +12,9 @@ export default function RootLayout({
     <>
       <AppHeader
         backButtonProps={{
-          backButtonLabel: "Projects",
-          backButtonHref: "projects/home",
-          icon: <LucideFolderClosed />,
+          backButtonLabel: "Home",
+          backButtonHref: homePath(),
+          icon: <LucideHouse />,
         }}
       ></AppHeader>
       <MainBody>{children}</MainBody>

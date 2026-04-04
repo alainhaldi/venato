@@ -1,11 +1,12 @@
 import { LucideIcon } from "lucide-react";
+import { Route } from "next";
 import Link from "next/link";
 import IconButton from "./icon-button";
 import { ThemeSwitcher } from "./theme/theme-switcher";
 
 type BackButtonProps = {
   backButtonLabel: string;
-  backButtonHref: string;
+  backButtonHref: Route;
   icon: React.ReactElement<LucideIcon>;
 };
 
