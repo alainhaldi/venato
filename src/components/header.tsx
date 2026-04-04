@@ -16,17 +16,26 @@ type AppHeaderProps = {
 const AppHeader = ({ backButtonProps }: AppHeaderProps) => {
   return (
     <div className="sticky top-0 z-50 flex flex-row h-12 items-center justify-between px-4 border-b backdrop-blur-xs">
-      {backButtonProps ? (
-        <IconButton
-          label={backButtonProps.backButtonLabel}
-          href={backButtonProps.backButtonHref}
-          icon={backButtonProps.icon}
-        ></IconButton>
-      ) : (
-        <div />
-      )}
-      <p className="text-2xl font-bold">venato</p>
-      <ThemeSwitcher />
+      {/* Element 1: BackIcon or Placeholder div */}
+      <div className="flex-1">
+        {backButtonProps ? (
+          <IconButton
+            label={backButtonProps.backButtonLabel}
+            href={backButtonProps.backButtonHref}
+            icon={backButtonProps.icon}
+          ></IconButton>
+        ) : (
+          <div />
+        )}
+      </div>
+      {/* Element 2: Text */}
+      <div className="flex flex-1 justify-center">
+        <p className="text-2xl font-bold">venato</p>
+      </div>
+      {/* Element 3: ThemeSwitcher */}
+      <div className=" flex flex-1 justify-end">
+        <ThemeSwitcher />
+      </div>
     </div>
   );
 };
