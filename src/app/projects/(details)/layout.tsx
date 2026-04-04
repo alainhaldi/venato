@@ -1,5 +1,6 @@
 import { LucideFolderClosed } from "lucide-react";
 import AppHeader from "@/components/header";
+import MainBody from "@/components/main-body";
 
 export default function RootLayout({
   children,
@@ -15,8 +16,7 @@ export default function RootLayout({
           icon: <LucideFolderClosed />,
         }}
       ></AppHeader>
-      <p>Hello Layout 2</p>
-      {children}
+      <MainBody>{children}</MainBody>
     </>
   );
 }
