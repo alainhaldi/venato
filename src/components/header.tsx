@@ -1,7 +1,6 @@
 import { LucideIcon } from "lucide-react";
 import { Route } from "next";
-import Link from "next/link";
-import IconButton from "./icon-button";
+import IconButton from "./link-icon-button";
 import { ThemeSwitcher } from "./theme/theme-switcher";
 
 type BackButtonProps = {
@@ -18,12 +17,11 @@ const AppHeader = ({ backButtonProps }: AppHeaderProps) => {
   return (
     <div className="sticky top-0 z-50 flex flex-row h-12 items-center justify-between px-4 border-b backdrop-blur-xs">
       {backButtonProps ? (
-        <Link href={backButtonProps.backButtonHref}>
-          <IconButton
-            icon={backButtonProps.icon}
-            label={backButtonProps.backButtonLabel}
-          ></IconButton>
-        </Link>
+        <IconButton
+          label={backButtonProps.backButtonLabel}
+          href={backButtonProps.backButtonHref}
+          icon={backButtonProps.icon}
+        ></IconButton>
       ) : (
         <div />
       )}
