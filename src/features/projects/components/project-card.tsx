@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Project } from "@/generated/prisma";
+import StatusBadge from "./status-badge";
 
 type ProjectCardProps = {
   project: Project;
@@ -18,7 +19,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     <Card className="flex w-full max-w-2xl m-4">
       <CardHeader>
         <CardTitle>{project.name}</CardTitle>
-        <CardAction>Card Action</CardAction>
+        {/* <CardAction>Card Action</CardAction> */}
+        <CardAction>
+          <StatusBadge status={project.status}></StatusBadge>
+        </CardAction>
         <CardDescription>Description</CardDescription>
       </CardHeader>
       {/* <CardContent>
