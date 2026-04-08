@@ -7,20 +7,27 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Project } from "@/generated/prisma";
 
-const ProjectCard = () => {
+type ProjectCardProps = {
+  project: Project;
+};
+
+const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <Card className="flex w-full max-w-2xl m-4">
       <CardHeader>
-        <CardTitle>Card Title</CardTitle>
-        <CardDescription>Card Description</CardDescription>
+        <CardTitle>{project.name}</CardTitle>
         <CardAction>Card Action</CardAction>
+        <CardDescription>Description</CardDescription>
       </CardHeader>
-      <CardContent>
+      {/* <CardContent>
         <p>Card Content</p>
-      </CardContent>
-      <CardFooter>
-        <p>Card Footer</p>
+      </CardContent> */}
+      <CardFooter className="flex justify-between">
+        <p>{project.createdAt.toISOString().slice(0, 10)}</p>
+        <p>25/40h</p>
+        <p>50002734</p>
       </CardFooter>
     </Card>
   );

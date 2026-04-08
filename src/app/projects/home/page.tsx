@@ -1,13 +1,15 @@
 import ProjectBar from "@/features/projects/components/project-bar";
 import ProjectCard from "@/features/projects/components/project-card";
+import { getProjects } from "@/features/projects/queries/getProjects";
 
-const ProjectsHomePage = () => {
-  const data = [1, 2, 3, 4];
+const ProjectsHomePage = async () => {
+  const projects = await getProjects();
+
   return (
     <div className="flex flex-col items-center ">
       <ProjectBar></ProjectBar>
-      {data.map((item) => (
-        <ProjectCard key={item}></ProjectCard>
+      {projects.map((project) => (
+        <ProjectCard key={project.id} project={project}></ProjectCard>
       ))}
     </div>
   );
