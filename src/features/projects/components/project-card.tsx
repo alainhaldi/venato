@@ -1,3 +1,5 @@
+import CopyButton from "@/components/copy-button";
+import CopyButtonWithLabel from "@/components/copy-button";
 import {
   Card,
   CardAction,
@@ -29,9 +31,15 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         <p>Card Content</p>
       </CardContent> */}
       <CardFooter className="flex justify-between">
-        <p>{project.createdAt.toISOString().slice(0, 10)}</p>
-        <p>25/40h</p>
-        <p>50002734</p>
+        <div className="flex flex-1">
+          <p>{project.createdAt.toISOString().slice(0, 10)}</p>
+        </div>
+        <div className="flex flex-1 justify-center">
+          <p>25/40h</p>
+        </div>
+        <div className="flex flex-1 justify-end">
+          <CopyButtonWithLabel>50002734</CopyButtonWithLabel>
+        </div>
       </CardFooter>
     </Card>
   );
