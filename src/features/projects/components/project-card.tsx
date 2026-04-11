@@ -1,5 +1,7 @@
-import CopyButton from "@/components/copy-button";
-import CopyButtonWithLabel from "@/components/copy-button";
+import CopyButton from "@/components/copy-button-with-label";
+import CopyButtonWithLabel from "@/components/copy-button-with-label";
+import TextBox from "@/components/text-box";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardAction,
@@ -10,6 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Project } from "@/generated/prisma";
+import { cn } from "@/lib/utils";
 import StatusBadge from "./status-badge";
 
 type ProjectCardProps = {
@@ -32,10 +35,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       </CardContent> */}
       <CardFooter className="flex justify-between">
         <div className="flex flex-1">
-          <p>{project.createdAt.toISOString().slice(0, 10)}</p>
+          <TextBox>{project.createdAt.toISOString().slice(0, 10)}</TextBox>
         </div>
         <div className="flex flex-1 justify-center">
-          <p>25/40h</p>
+          <TextBox>23h / 30h</TextBox>
         </div>
         <div className="flex flex-1 justify-end">
           <CopyButtonWithLabel>50002734</CopyButtonWithLabel>
