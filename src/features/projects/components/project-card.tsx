@@ -39,13 +39,21 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       </Link>
       <CardFooter className="flex justify-between">
         <div className="flex flex-1">
-          <TextBox>{project.createdAt.toISOString().slice(0, 10)}</TextBox>
+          <TextBox>
+            {/* ISO converted to: DD.MM.YYYY */}
+            {project.createdAt
+              .toISOString()
+              .slice(0, 10)
+              .split("-")
+              .reverse()
+              .join(".")}
+          </TextBox>
         </div>
         <div className="flex flex-1 justify-center">
-          <TextBox>23h / 30h</TextBox>
+          <TextBox>{`${project.hoursBooked}h / ${project.hoursAvailable}h`}</TextBox>
         </div>
         <div className="flex flex-1 justify-end">
-          <CopyButtonWithLabel>50002734</CopyButtonWithLabel>
+          <CopyButtonWithLabel>{project.projectNumber}</CopyButtonWithLabel>
         </div>
       </CardFooter>
     </Card>
