@@ -24,7 +24,7 @@ type ProjectCardProps = {
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <Card className="flex w-full max-w-2xl m-4">
-      <Link href={projectDetailsPath("dummyName")}>
+      <Link href={projectDetailsPath(project.id.toString())}>
         <CardHeader>
           <CardTitle>{project.name}</CardTitle>
           {/* <CardAction>Card Action</CardAction> */}
