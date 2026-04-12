@@ -1,7 +1,7 @@
 import { LucideFolderClosed } from "lucide-react";
 import AppHeader from "@/components/header";
 import MainBody from "@/components/main-body";
-import { projectsHomePath } from "@/paths";
+import { projectsPath } from "@/paths";
 
 export default function RootLayout({
   children,
@@ -13,7 +13,7 @@ export default function RootLayout({
       <AppHeader
         backButtonProps={{
           backButtonLabel: "Projects",
-          backButtonHref: projectsHomePath(),
+          backButtonHref: projectsPath(),
           icon: <LucideFolderClosed />,
         }}
       ></AppHeader>
