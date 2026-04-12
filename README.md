@@ -7,7 +7,7 @@
 
 ## Database
 
-- Update Project Schema and add missing variables (Projectnumber, Ist, Soll h, Description)
+x Update Project Schema and add missing variables (Projectnumber, Ist, Soll h, Description)
 
 ## Forms
 
