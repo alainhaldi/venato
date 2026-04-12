@@ -1,27 +1,25 @@
 "use client";
 
-import { LucideCheck, LucideCopy } from "lucide-react";
-import { useState } from "react";
-import { Button } from "./ui/button";
+import { LucideCopy } from "lucide-react";
+import ButtonWithLabelAndIcon from "./button-with-label-and-icon";
 
 type CopyButtonWithLabelProps = {
   children: string;
 };
 
 const CopyButtonWithLabel = ({ children }: CopyButtonWithLabelProps) => {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = async () => {
+  const onClick = async () => {
     await navigator.clipboard.writeText(children);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
-    <Button variant="outline" onClick={handleCopy}>
-      {copied ? <LucideCheck></LucideCheck> : <LucideCopy></LucideCopy>}
-      {copied ? "Copied!" : children}
-    </Button>
+    <ButtonWithLabelAndIcon
+      icon={<LucideCopy></LucideCopy>}
+      onClick={onClick}
+      onClickedLabel={"Copied!"}
+    >
+      {children}
+    </ButtonWithLabelAndIcon>
   );
 };
 

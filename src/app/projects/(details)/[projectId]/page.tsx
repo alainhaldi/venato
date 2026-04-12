@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import ProjectCard from "@/features/projects/components/project-card";
 import { getProject } from "@/features/projects/queries/getProject";
 
 type ProjectDetailPageProps = {
@@ -15,7 +16,7 @@ const ProjectDetailPage = async ({ params }: ProjectDetailPageProps) => {
     notFound();
   }
 
-  return <div>{project?.name}</div>;
+  return <ProjectCard project={project}></ProjectCard>;
 };
 
 export default ProjectDetailPage;

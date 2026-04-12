@@ -1,13 +1,13 @@
 # Todos
 
+- Add Button and Function to book new hours on a project
+
 ## Navigation
 
 - ProjectDetail Page
 - New Project Page
 
 ## Database
-
-x Update Project Schema and add missing variables (Projectnumber, Ist, Soll h, Description)
 
 ## Forms
 

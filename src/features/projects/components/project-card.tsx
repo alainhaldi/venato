@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ButtonWithLabelAndIcon from "@/components/button-with-label-and-icon";
 import CopyButton from "@/components/copy-button-with-label";
 import CopyButtonWithLabel from "@/components/copy-button-with-label";
 import TextBox from "@/components/text-box";
@@ -31,10 +32,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           <CardAction>
             <StatusBadge status={project.status}></StatusBadge>
           </CardAction>
-          <CardDescription>Description</CardDescription>
+          <CardDescription>{project.Description}</CardDescription>
         </CardHeader>
         {/* <CardContent>
-        <p>Card Content</p>
+          <div>
+            <p>Card Content</p>
+          </div>
         </CardContent> */}
       </Link>
       <CardFooter className="flex justify-between">
@@ -50,6 +53,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </TextBox>
         </div>
         <div className="flex flex-1 justify-center">
+          {/* TODO: Change to ButtonWithLabelAndIcon */}
           <TextBox>{`${project.hoursBooked}h / ${project.hoursAvailable}h`}</TextBox>
         </div>
         <div className="flex flex-1 justify-end">
