@@ -8,7 +8,7 @@ type StatusBadgeProps = {
 const StatusBadge = ({ status }: StatusBadgeProps) => {
   const isDone = status == "DONE";
   const isInProgress = status == "IN_PROGRESS";
-  const isPaused = status == "Paused";
+  const isPaused = status == "PAUSED";
 
   return (
     <div className="flex flex-wrap gap-2">
