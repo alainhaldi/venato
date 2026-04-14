@@ -7,26 +7,29 @@ import { Button } from "../ui/button";
 type ButtonWithLabelAndIconProps = {
   children: string;
   icon: React.ReactElement<LucideIcon>;
-  onClick: () => void;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   onClickedLabel: string;
-};
+  ref?: React.Ref<HTMLButtonElement>;
+} & Omit<React.ComponentProps<"button">, "onClick">;
 
 const ButtonWithLabelAndIcon = ({
   children,
   icon,
   onClick,
   onClickedLabel,
+  ref,
+  ...rest
 }: ButtonWithLabelAndIconProps) => {
   const [clicked, setClicked] = useState(false);
 
-  const handleClick = async () => {
-    onClick();
+  const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    onClick(e);
     setClicked(true);
     setTimeout(() => setClicked(false), 2000);
   };
 
   return (
-    <Button variant="outline" onClick={handleClick}>
+    <Button variant="outline" onClick={handleClick} ref={ref} {...rest}>
       {clicked ? <LucideCheck></LucideCheck> : icon}
       {clicked ? onClickedLabel : children}
     </Button>
