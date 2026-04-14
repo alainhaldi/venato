@@ -6,7 +6,7 @@ const ProjectsHomePage = async () => {
   const projects = await getProjects();
 
   return (
-    <div className="flex flex-col items-center ">
+    <div className="flex flex-col items-center">
       <ProjectBar></ProjectBar>
       {projects.map((project) => (
         <ProjectCard key={project.id} project={project}></ProjectCard>

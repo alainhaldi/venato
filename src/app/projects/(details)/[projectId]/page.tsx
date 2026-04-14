@@ -16,7 +16,11 @@ const ProjectDetailPage = async ({ params }: ProjectDetailPageProps) => {
     notFound();
   }
 
-  return <ProjectCard project={project}></ProjectCard>;
+  return (
+    <div className="flex flex-col items-center">
+      <ProjectCard project={project}></ProjectCard>
+    </div>
+  );
 };
 
 export default ProjectDetailPage;
