@@ -1,9 +1,7 @@
 import Link from "next/link";
-import ButtonWithLabelAndIcon from "@/components/button-with-label-and-icon";
-import CopyButton from "@/components/copy-button-with-label";
-import CopyButtonWithLabel from "@/components/copy-button-with-label";
+import AddingHoursButtonWithLabel from "@/components/buttons/adding-hours-button-with-label";
+import CopyButtonWithLabel from "@/components/buttons/copy-button-with-label";
 import TextBox from "@/components/text-box";
-import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardAction,
@@ -14,8 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Project } from "@/generated/prisma";
-import { cn } from "@/lib/utils";
-import { projectDetailsPath, projectsPath } from "@/paths";
+import { projectDetailsPath } from "@/paths";
 import StatusBadge from "./status-badge";
 
 type ProjectCardProps = {
@@ -53,8 +50,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </TextBox>
         </div>
         <div className="flex flex-1 justify-center">
-          {/* TODO: Change to ButtonWithLabelAndIcon */}
-          <TextBox>{`${project.hoursBooked}h / ${project.hoursAvailable}h`}</TextBox>
+          <AddingHoursButtonWithLabel>{`${project.hoursBooked}h / ${project.hoursAvailable}h`}</AddingHoursButtonWithLabel>
         </div>
         <div className="flex flex-1 justify-end">
           <CopyButtonWithLabel>{project.projectNumber}</CopyButtonWithLabel>

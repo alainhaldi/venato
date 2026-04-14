@@ -1,7 +1,7 @@
 "use client";
 
 import { LucideCopy } from "lucide-react";
-import ButtonWithLabelAndIcon from "./button-with-label-and-icon";
+import ButtonWithLabelAndIcon from "./base-button-with-label-and-icon";
 
 type CopyButtonWithLabelProps = {
   children: string;
