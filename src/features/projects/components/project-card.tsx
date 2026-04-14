@@ -50,7 +50,9 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </TextBox>
         </div>
         <div className="flex flex-1 justify-center">
-          <AddingHoursButtonWithLabel>{`${project.hoursBooked}h / ${project.hoursAvailable}h`}</AddingHoursButtonWithLabel>
+          <AddingHoursButtonWithLabel
+            projectId={project.id}
+          >{`${project.hoursBooked}h / ${project.hoursAvailable}h`}</AddingHoursButtonWithLabel>
         </div>
         <div className="flex flex-1 justify-end">
           <CopyButtonWithLabel>{project.projectNumber}</CopyButtonWithLabel>
